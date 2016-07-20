@@ -1,25 +1,27 @@
 [
   {
-  "name": "Root",
+  "name": "Sastry and Sundari",
   "parent": "null",
   "children": [
     {
-      "name": "Child1",
+      "name": "Ravi and Sharmila",
       "parent": "Root",
       "children": [
         {
-          "name": "Grand Child1",
-          "parent": "Child1"
-        },
-        {
-          "name": "Grand Child2",
-          "parent": "Child1"
+          "name": "Harsha",
+          "parent": "Ravi and Sharmila"
         }
       ]
     },
     {
-      "name": "Child2",
-      "parent": "Root"
+      "name": "Sai and Manasa",
+      "parent": "Root",
+      "children": [
+        {
+          "name": "Nitya",
+          "parent": "Sai and Manasa"
+        }
+      ]
     }
   ]
 }
