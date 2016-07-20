@@ -46,7 +46,7 @@
         .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
 
     // load the external data
-    d3.json("/miserables.json", function(error, treeData) {
+    d3.json("/tree.json", function(error, treeData) {
       root = treeData[0];
       update(root);
     });
