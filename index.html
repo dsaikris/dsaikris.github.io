@@ -49,8 +49,8 @@
 	  </div>
 	
 	  <div class="bubble">
-	      <p><b>K_</b> - <br/>
-       	      Checkout my family tree.I built it using <a href="https://d3js.org/">d3.js data driven pages</a>
+	      <p id="fTreeBlock"><b>K_</b> - <br/>
+       	      Checkout my family tree.I built it using <a href="https://d3js.org/">d3.js data driven pages</a> <br/>
       
 	         <script>
 	          // ************** Generate the tree diagram  *****************
@@ -66,7 +66,7 @@
 	          var diagonal = d3.svg.diagonal()
 	              .projection(function(d) { return [d.y, d.x]; });
 	      
-	          var svg = d3.select("body").append("svg")
+	          var svg = d3.select($("#fTreeBlock")[0].append("svg")
 	              .attr("width", width + margin.right + margin.left)
 	              .attr("height", height + margin.top + margin.bottom)
 	            .append("g")
