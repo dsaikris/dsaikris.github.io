@@ -51,6 +51,7 @@
 	  <div class="bubble">
 	      <p><b>K_</b> - <br/>
        	      Checkout my family tree.I built it using <a href="https://d3js.org/">d3.js data driven pages</a> <br/>
+       	      
               <div id="fTreeBlock"></div>
               
 	         <script>
@@ -67,7 +68,7 @@
 	          var diagonal = d3.svg.diagonal()
 	              .projection(function(d) { return [d.y, d.x]; });
 	      
-	          var svg = d3.select($("#fTreeBlock")[0]).append("svg")
+	          var svg = d3.select("#fTreeBlock").append("svg")
 	              .attr("width", width + margin.right + margin.left)
 	              .attr("height", height + margin.top + margin.bottom)
 	            .append("g")
