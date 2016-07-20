@@ -22,12 +22,12 @@ function generateTreeDiagram(){
   // load the external data
   d3.json("tree.json", function(error, treeData) {
     root = treeData[0];
-    update(root,tree,svg);
+    update(root,tree,svg,i,diagonal);
   });
 
 }
 
-function update(source,tree,svg) {
+function update(source,tree,svg,i,diagonal) {
 	// Compute the new tree layout.
 	var nodes = tree.nodes(root).reverse(),
 	    links = tree.links(nodes);
