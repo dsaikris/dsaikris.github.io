@@ -1,95 +1,74 @@
 [
   {
-  "name": "Me",
-  "parent": "null",
+  "name": "Who am I",
   "children": [
     {
       "name": "Languages I Speek",
-      "parent": "Me",
       "children": [
         {
-          "name": "English",
-          "parent": "Languages I can Speek"
+          "name": "English"
         },
         {
-          "name": "Telugu",
-          "parent": "Languages I can Speek"
+          "name": "Telugu"
         },
         {
-          "name": "Hindi",
-          "parent": "Languages I can Speek"
+          "name": "Hindi"
         }
       ]
     },
     {
       "name": "Education",
-      "parent": "Me",
       "children": [
         {
-          "name": "B.Tech, Computer Science",
-          "parent": "Education"
+          "name": "B.Tech, Computer Science"
         },
         {
-          "name": "M.S Resarch, Algorithms and graph theory",
-          "parent": "Programming languages"
+          "name": "M.S Resarch, Algorithms and graph theory"
         }
       ]
     },
     {
       "name": "Programming languages",
-      "parent": "Me",
       "children": [
         {
-          "name": "Java",
-          "parent": "Programming languages"
+          "name": "Java"
         },
         {
-          "name": "C",
-          "parent": "Programming languages"
+          "name": "C"
         },
         {
-          "name": "Ruby",
-          "parent": "Programming languages"
+          "name": "Ruby"
         }
       ]
     },
     {
       "name": "Places I worked",
-      "parent": "Me",
       "children": [
         {
-          "name": "Chennai",
-          "parent": "Education"
+          "name": "Chennai"
         },
         {
-          "name": "Hyderabad",
-          "parent": "Programming languages"
+          "name": "Hyderabad"
         },
         {
-          "name": "Seattle",
-          "parent": "Programming languages"
+          "name": "Seattle"
         }
       ]
     },
     {
       "name": "Interests",
-      "parent": "Me",
       "children": [
         {
-          "name": "Web srevices, See SOA, AWS, IFTTT..",
-          "parent": "Interests"
+          "name": "Web srevices, See SOA, AWS, IFTTT.."
         },
         {
-          "name": "Algorithms, See Gene matching",
-          "parent": "Interests"
+          "name": "Algorithms, See Gene matching"
         },
         {
-          "name": "Robotics, See Molecubes",
-          "parent": "Interests"
+          "name": "Robotics, See Molecubes"
         },
         {
-          "name": "Security, Do you know that I know? I can know?",
-          "parent": "Interests"
+          "name": "Security, Do you know that I know! I can know?"
         }
       ]
     }
