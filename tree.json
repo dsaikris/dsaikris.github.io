@@ -4,7 +4,7 @@
   "parent": "null",
   "children": [
     {
-      "name": "Languages I can Speek",
+      "name": "Languages I Speek",
       "parent": "Me",
       "children": [
         {
@@ -16,8 +16,22 @@
           "parent": "Languages I can Speek"
         },
         {
-          "name": "Telugu",
+          "name": "Hindi",
           "parent": "Languages I can Speek"
+        }
+      ]
+    },
+    {
+      "name": "Education",
+      "parent": "Me",
+      "children": [
+        {
+          "name": "B.Tech, Computer Science",
+          "parent": "Education"
+        },
+        {
+          "name": "M.S Resarch, Algorithms and graph theory",
+          "parent": "Programming languages"
         }
       ]
     },
@@ -40,16 +54,42 @@
       ]
     },
     {
-      "name": "Education",
+      "name": "Places I worked",
       "parent": "Me",
       "children": [
         {
-          "name": "B.Tech, Computer Science",
+          "name": "Chennai",
           "parent": "Education"
         },
         {
-          "name": "M.S Resarch, Algorithms and graph theory",
+          "name": "Hyderabad",
           "parent": "Programming languages"
+        },
+        {
+          "name": "Seattle",
+          "parent": "Programming languages"
+        }
+      ]
+    },
+    {
+      "name": "Interests",
+      "parent": "Me",
+      "children": [
+        {
+          "name": "Web srevices, See SOA, AWS, IFTTT..",
+          "parent": "Interests"
+        },
+        {
+          "name": "Algorithms, See Gene matching",
+          "parent": "Interests"
+        },
+        {
+          "name": "Robotics, See Molecubes",
+          "parent": "Interests"
+        },
+        {
+          "name": "Security, Do you know that I know? I can know?",
+          "parent": "Interests"
         }
       ]
     }
