@@ -1,25 +1,55 @@
 [
   {
-  "name": "Sastry and Sundari",
+  "name": "Me",
   "parent": "null",
   "children": [
     {
-      "name": "Ravi and Sharmila",
-      "parent": "Root",
+      "name": "Languages I can Speek",
+      "parent": "Me",
       "children": [
         {
-          "name": "Harsha",
-          "parent": "Ravi and Sharmila"
+          "name": "English",
+          "parent": "Languages I can Speek"
+        },
+        {
+          "name": "Telugu",
+          "parent": "Languages I can Speek"
+        },
+        {
+          "name": "Telugu",
+          "parent": "Languages I can Speek"
         }
       ]
     },
     {
-      "name": "Sai and Manasa",
-      "parent": "Root",
+      "name": "Programming languages",
+      "parent": "Me",
       "children": [
         {
-          "name": "Nitya",
-          "parent": "Sai and Manasa"
+          "name": "Java",
+          "parent": "Programming languages"
+        },
+        {
+          "name": "C",
+          "parent": "Programming languages"
+        },
+        {
+          "name": "Ruby",
+          "parent": "Programming languages"
+        }
+      ]
+    },
+    {
+      "name": "Education",
+      "parent": "Me",
+      "children": [
+        {
+          "name": "B.Tech, Computer Science",
+          "parent": "Education"
+        },
+        {
+          "name": "M.S Resarch, Algorithms and graph theory",
+          "parent": "Programming languages"
         }
       ]
     }
