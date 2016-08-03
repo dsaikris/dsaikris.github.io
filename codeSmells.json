@@ -1,0 +1,24 @@
+[
+  {
+  "name": "Code smells",
+  "children": [
+    {
+      "name": "Bloters",
+      "children": [
+        {
+          "name": "Long Method"
+        },
+        {
+          "name": "Long Paramets"
+        },
+        {
+          "name": "Long Class"
+        },
+        {
+          "name": "Data Clumps"
+        }
+      ]
+    }
+  ]
+  }
+]
