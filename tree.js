@@ -1,6 +1,6 @@
-generateTreeDiagram();
+generateTreeDiagram("fTreeBlock","tree.json");
 
-function generateTreeDiagram(){
+function generateTreeDiagram(divIdentifier,jsonFileName){
   var margin = {top: 20, right: 120, bottom: 20, left: 120},
       width = 960 - margin.right - margin.left,
       height = 500 - margin.top - margin.bottom;
@@ -13,14 +13,14 @@ function generateTreeDiagram(){
   var diagonal = d3.svg.diagonal()
       .projection(function(d) { return [d.y, d.x]; });
 
-  var svg = d3.select("#fTreeBlock").append("svg")
+  var svg = d3.select("#"+ divIdentifier).append("svg")
       .attr("width", width + margin.right + margin.left)
       .attr("height", height + margin.top + margin.bottom)
     .append("g")
       .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
 
   // load the external data
-  d3.json("tree.json", function(error, treeData) {
+  d3.json(jsonFileName, function(error, treeData) {
     root = treeData[0];
     update(root,tree,svg,i,diagonal);
   });
