@@ -9,7 +9,7 @@
           "name": "Long Method:\nToo many lines of code"
         },
         {
-          "name": "Long Parameters:\n Four parameters for a method"
+          "name": "Long Parameters:\nFour parameters for a method"
         },
         {
           "name": "Long Class:\nMany fields/methods/lines of code."
