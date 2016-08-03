@@ -6,19 +6,19 @@
       "name": "Bloters",
       "children": [
         {
-          "name": "Long Method: <br/>Too many lines of code"
+          "name": "Long Method:\nToo many lines of code"
         },
         {
-          "name": "Long Parameters: <br/> Four parameters for a method"
+          "name": "Long Parameters:\n Four parameters for a method"
         },
         {
-          "name": "Long Class: <br/>Many fields/methods/lines of code."
+          "name": "Long Class:\nMany fields/methods/lines of code."
         },
         {
-          "name": "Data Clumps: <br/>Identical groups of variables"
+          "name": "Data Clumps:\nIdentical groups of variables"
         },
         {
-          "name": "Primitive Obsession: <br/>Primitives instead of small objects.<br/> Ex: Latitiude and longitude instead on Geocode"
+          "name": "Primitive Obsession:\nPrimitives instead of small objects.\nEx: Latitiude and longitude instead on Geocode"
         }
       ]
     }
