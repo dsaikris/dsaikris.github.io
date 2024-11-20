@@ -1,5 +1,4 @@
 function generateTreeDiagram(divIdentifier,jsonFileName){
-  alert("Generating a tree for " + jsonFileName + " and putting in " + divIdentifier); 
   var margin = {top: 20, right: 120, bottom: 20, left: 120},
       width = 960 - margin.right - margin.left,
       height = 500 - margin.top - margin.bottom;
