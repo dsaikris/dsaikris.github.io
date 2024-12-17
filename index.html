@@ -25,10 +25,69 @@
     </style>
 	  
   </head>
-
+  
   <body>
     <script src="//cdnjs.cloudflare.com/ajax/libs/d3/3.5.6/d3.min.js"></script>  
-	<script src="./tree.js"></script> 
+    <script src="./tree.js"></script> 
+    <script>
+	  const NS = "http://www.w3.org/2000/svg";
+	  const BOX_SIZE = 50;
+	
+	  function addBox(svg, i, j, largeText, smallText, color) {
+	    var s = BOX_SIZE;
+	    var rect = document.createElementNS(NS, "rect");
+	    rect.setAttribute("width", s);
+	    rect.setAttribute("height", s);
+	    rect.setAttribute("x", i*s);
+	    rect.setAttribute("y", j*s);
+	    rect.setAttribute("rx", s/5);
+	    rect.setAttribute("ry", s/5);
+	    rect.setAttribute("style", "fill:"+ color +";stroke:black;stroke-width:3;opacity:0.5");
+	    svg.appendChild(rect);
+	
+	    var text = document.createElementNS(NS, "text");
+	    text.textContent = smallText;
+	    text.setAttribute("width", s);
+	    text.setAttribute("height", s);
+	    text.setAttribute("x", i*s + s/10);
+	    text.setAttribute("y", j*s + s/5);
+	    text.setAttribute("font-size", 12);
+	    svg.appendChild(text);
+	
+	    var content = document.createElementNS(NS, "text");
+	    content.textContent = largeText;
+	    content.setAttribute("width", s);
+	    content.setAttribute("height", s);
+	    content.setAttribute("x", i*s + s/3);
+	    content.setAttribute("y", j*s + 3*s/4);
+	    content.setAttribute("font-size", 20);
+	    svg.appendChild(content);
+	
+	}
+	
+	function drawArray(svgId, array, variables, values) {
+	    var n = array.length >=10? array.length:10;
+	    var svg = document.getElementById(svgId);
+	    svg.setAttribute("width", n*BOX_SIZE);
+	    svg.setAttribute("height", 2*BOX_SIZE);
+	    for (var i = 0; i < n; i++) {
+	      addBox(svg, i, 0 ,array[i], i, i<array.length? "red" : "white");
+	    };
+	    for (var i = 0; i < n; i++) {
+	      addBox(svg, i, 1 ,values[i], variables[i], i<values.length? "blue" : "white");
+	    };
+	}
+	
+	document.addEventListener("DOMContentLoaded", function(event) {
+	    drawArray("array1",[33,11,24],["topIndex","start","peek()"],[2,0,24]);
+	});
+	
+	document.addEventListener("DOMContentLoaded", function(event) {
+	    drawArray("array2",[33,11], ["topIndex","start","peek()"], [1,0,11]);
+	});
+    </script>
+
+	  
     <div class="container">
     <p class="datestamp"July 26, 2016, 12:05 PM</p>
 
@@ -111,6 +170,27 @@
 	     <p><b>K_</b> - <br/>
 	     One <a href="https://www.plantuml.com/plantuml/uml/PP1DRZ8n38RtEON56f3W00Y1Pl4jHdoBzW1knWmH-Hd5oI1KzUvrmq09NH3iUH__-DromfYoiqgXJY72R9yv1KTn1iYmLmeWCsbaWjcxFEWx6F0AHs4H-X0wA15J78qM_OpmaTbuOeOXXYxhL5fbfG0YwOI-jmIVaW5CCtVtWiF5JvCFpthZUz4dfNbM_jycW4EF_GIqgnUYZ-XgObqH50PBDQ04UBhy3S_4e34IX2ECXeEVWyusvNYpn0LFrr8wQbVN_dDYmqYGJbGPClp1B3dowTS-uqqocCn8_EfhkObB7rFtQSiPmfIhvlUHPSkgxcNDNJQsOqYaJzvejDMkL5XvlkId3h3Ob3ltFq5M4i8YclwKIjgkOD65YvTaKEtwaHZL2YzpcySdabxBvGPQaSh_wXwifw1HM_9TTlOR">more</a> fun thing.
 	  </div>  
+
+	  <div class="bubble bubble-alt yellow">
+	    <p><b>SH</b> - <br/>
+	    3Ms! 1 should be good enough.</p>
+	  </div> 
+
+	  <div class="bubble">
+	     <p><b>K_</b> - <br/>
+	     Put elements in first in last out manor. Let say we put 33 then put 11 and then put 24 in to the array.<br/>
+	     <svg id="array1" xmlns="http://www.w3.org/2000/svg"/>
+	     <br/>
+
+	     Now if we want the top of the stack it is 24. So, if we take out the top element we get 24, i.e pop -> 2.<br/>
+	     <svg id="array2" xmlns="http://www.w3.org/2000/svg"/>
+	     <br/></p>	     
+	  </div>  
+
+	  <div class="bubble bubble-alt yellow">
+	    <p><b>SH</b> - <br/>
+	    Nice SVG tricks!</p>
+	  </div>   
 	    
   </div><!-- @end .container -->
   </body>	
