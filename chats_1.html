@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests" />
+	<meta name="keywords" content="D3,codeSmells,design">
+	<meta name="author" content="Sai Krishna">
+    
+    <meta http-equiv="Content-Type" content="text/html">
+    <title>Chats/K_, SH and others</title>  
+	  
+    <link rel="stylesheet" type="text/css" media="all" href="styles.css">	  
+    <style>
+    .node circle {
+      fill: #fff;
+      stroke: steelblue;
+      stroke-width: 3px;
+    }
+
+    .node text { font: 12px sans-serif; }
+
+    .link {
+    	fill: none;
+    	stroke: #ccc;
+    	stroke-width: 2px;
+    }
+
+	.imageContainer > img:hover {
+		transform: scale(2.5);
+	}
+    </style>
+	  
+  </head>
+  
+  <body>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/d3/3.5.6/d3.min.js"></script>  
+    <script src="./tree.js"></script> 
+    <script>
+	  const NS = "http://www.w3.org/2000/svg";
+	  const BOX_SIZE = 50;
+	
+	  function addBox(svg, i, j, largeText, smallText, color) {
+	    var s = BOX_SIZE;
+	    var rect = document.createElementNS(NS, "rect");
+	    rect.setAttribute("width", s);
+	    rect.setAttribute("height", s);
+	    rect.setAttribute("x", i*s);
+	    rect.setAttribute("y", j*s);
+	    rect.setAttribute("rx", s/5);
+	    rect.setAttribute("ry", s/5);
+	    rect.setAttribute("style", "fill:"+ color +";stroke:black;stroke-width:3;opacity:0.5");
+	    svg.appendChild(rect);
+	
+	    var text = document.createElementNS(NS, "text");
+	    text.textContent = smallText;
+	    text.setAttribute("width", s);
+	    text.setAttribute("height", s);
+	    text.setAttribute("x", i*s + s/10);
+	    text.setAttribute("y", j*s + s/5);
+	    text.setAttribute("font-size", 12);
+	    svg.appendChild(text);
+	
+	    var content = document.createElementNS(NS, "text");
+	    content.textContent = largeText;
+	    content.setAttribute("width", s);
+	    content.setAttribute("height", s);
+	    content.setAttribute("x", i*s + s/3);
+	    content.setAttribute("y", j*s + 3*s/4);
+	    content.setAttribute("font-size", 20);
+	    svg.appendChild(content);
+	
+	}
+	
+	function drawArray(svgId, array, variables, values) {
+	    var n = array.length >=8? array.length:8;
+	    var svg = document.getElementById(svgId);
+	    svg.setAttribute("width", n*BOX_SIZE);
+	    svg.setAttribute("height", 2*BOX_SIZE);
+	    for (var i = 0; i < n; i++) {
+	      addBox(svg, i, 0 ,array[i], i, i<array.length? "red" : "white");
+	    };
+	    for (var i = 0; i < n; i++) {
+	      addBox(svg, i, 1 ,values[i], variables[i], i<values.length? "blue" : "white");
+	    };
+	}
+	
+	document.addEventListener("DOMContentLoaded", function(event) {
+	    drawArray("array1",[33,11,24],["topIndex","start","peek()"],[2,0,24]);
+	});
+	
+	document.addEventListener("DOMContentLoaded", function(event) {
+	    drawArray("array2",[33,11], ["topIndex","start","peek()"], [1,0,11]);
+	});
+    </script>
+
+    <h1>K_, SH and others</h1>
+	<h2><a href="index.html">Home</a></h2>
+	 
+    <div class="container">
+    <p class="datestamp"July 26, 2016, 12:05 PM</p>
+
+	  <div class="bubble">
+	    <p><b>K_</b> - <br/>
+	    The game is on!</p>
+	  </div>
+	
+	  <div class="bubble bubble-alt yellow">
+	    <p><b>SH</b> - <br/>
+	    Where?</p>
+	  </div>
+	
+	  <div class="bubble">
+	     <p><b>K_</b> - <br/>
+	     Wow! Github is not only for developers! See <a href="https://pages.github.com/">Github pages</a></p>
+	  </div>
+	
+	  <div class="bubble bubble-alt yellow">
+	      <p><b>SH</b> - <br/>
+	      Who are you?!</p>
+	  </div>
+	
+	  <div class="bubble">
+	      <p><b>K_</b> - <br/>
+       	     I built this using <a href="https://d3js.org/">d3.js data driven pages</a></p>
+       	  </div>
+       	  
+          <div id="aboutMeTreeBlock">
+			<script>generateTreeDiagram("aboutMeTreeBlock","tree.json");</script>
+	      </div>
+	  
+	  <div class="bubble bubble-alt yellow">
+	    <p><b>SH</b> - <br/>
+	    Krishna! What have you done!</p>
+	  </div>
+
+	   <div class="bubble">
+	     <p><b>K_</b> - <br/>
+	     Catch me, if you can!</p>
+	     <!-- Here is a clue. https://github.com/dsaikris/dsaikris.github.io-->
+	  </div>
+	  
+	  <div class="bubble">
+	     <p><b>K_</b> - <br/>
+	     Most code smells!<br/>
+             Do you know how?</p>
+	  </div>
+	  
+	  <div id="codeSmellTreeBlock">
+		<script>generateTreeDiagram("codeSmellTreeBlock","codeSmells.json");</script>
+	  </div>
+		  
+	  <div class="bubble bubble-alt yellow">
+	    <p><b>SH</b> - <br/>
+	    Ah, thats old. Tell me something that I don't Know.</p>
+	  </div>
+
+          <div class="bubble">
+	     <p><b>K_</b> - <br/>
+	     Ok did you know? You can write simple code for a design. See <a href="http://plantuml.com/">Plant UML</a>  
+	  </div>
+		  
+	  <div class="bubble">
+	     <p><b>K_</b> - <br/>
+	     Then review <a href="https://www.plantuml.com/plantuml/svg/RP51JlCm48NtSufHLl-_21BRBb0B1QaI2nJe0QREjBMQs94zQOKGTsTYomKYid3iUP_dFTlBA1Hax3iW8pxWDd80q_cnnMhZX8DZgP0YbWN0GEP41yRgpRhtRVEC6T_xq9DOxohy0DJF-7xmZfryanVUHIkS6Zuzpgbuz47O_Hj3znyrnzcQZAvUDgzpE73qtPd_X9i4joIqewX1rtcMzVNzlDMKx87CCUjf1fy0qrLW7UpXAFMTniK5tjvWJoT6qVE0LceLKhXfIAkq6o7_jA1skcyOfVHh_SLfkLodYYjZE4PCfqVD0bUjBhwD7uLH0kttrlmmRX3IU7N-PRp00qi1IYTkRM0Zi6JNwhD_0G00">it</a> and ship it.
+	  </div>
+		  
+	  <div class="bubble bubble-alt yellow">
+	    <p><b>SH</b> - <br/>
+	    Hmm. Nothing should be lost in cracks of time.</p>
+	  </div>
+		  
+	  <div class="bubble">
+	     <p><b>K_</b> - <br/>
+	     My cards are always on the table.
+	  </div>
+
+	  <div class="bubble">
+	     <p><b>K_</b> - <br/>
+	     One <a href="https://www.plantuml.com/plantuml/uml/PP1DRZ8n38RtEON56f3W00Y1Pl4jHdoBzW1knWmH-Hd5oI1KzUvrmq09NH3iUH__-DromfYoiqgXJY72R9yv1KTn1iYmLmeWCsbaWjcxFEWx6F0AHs4H-X0wA15J78qM_OpmaTbuOeOXXYxhL5fbfG0YwOI-jmIVaW5CCtVtWiF5JvCFpthZUz4dfNbM_jycW4EF_GIqgnUYZ-XgObqH50PBDQ04UBhy3S_4e34IX2ECXeEVWyusvNYpn0LFrr8wQbVN_dDYmqYGJbGPClp1B3dowTS-uqqocCn8_EfhkObB7rFtQSiPmfIhvlUHPSkgxcNDNJQsOqYaJzvejDMkL5XvlkId3h3Ob3ltFq5M4i8YclwKIjgkOD65YvTaKEtwaHZL2YzpcySdabxBvGPQaSh_wXwifw1HM_9TTlOR">more</a> fun thing.
+	  </div>
+
+	  <div class="bubble bubble-alt yellow">
+	    <p><b>SH</b> - <br/>
+	    3Ms! 1 should be good enough.</p>
+	  </div>
+
+	  <div class="bubble">
+	     <p><b>K_</b> - <br/>
+	     Put elements in this manor. Let say we put 33 then put 11 and then put 24 into an array.<br/><br/>
+	     <svg id="array1" xmlns="http://www.w3.org/2000/svg"/>
+	     <br/><br/>
+
+	     Now if you want the top of the deck it is 24. So, if you take out 3 more you get?<br/><br/>
+	     <svg id="array2" xmlns="http://www.w3.org/2000/svg"/>
+	     <br/><br/>
+	     
+	     </p>
+	  </div>
+
+	  <div class="bubble bubble-alt yellow">
+	    <p><b>SH</b> - <br/>
+	    Nothing. Nice <a href="https://www.w3schools.com/graphics/svg_intro.asp">SVG</a> tricks!</p>
+	  </div> 
+
+	   <div class="bubble">
+	     <p><b>K_</b> - <br/>
+	     How about this?
+			 <div class="imageContainer">
+				<img src ="TickTok.svg" height="600" width="300" />
+			  </div>
+	   </div>
+	   
+	   <div class="bubble">
+		<p><b>You reached the end of this conversation for now.</b>
+		<br/>
+		<br/>
+		<p>These are "my personal" pages. Please contact me via *it*u* for any questions or suggestions. Thank you.</p>		     
+	  </div>
+  </div><!-- @end .container --> 
+</body>
+</html>
