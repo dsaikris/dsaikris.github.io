@@ -1,0 +1,264 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests" />
+	<meta name="keywords" content="D3,codeSmells,design">
+	<meta name="author" content="Sai Krishna">
+    
+    <meta http-equiv="Content-Type" content="text/html">
+    <title>Chats/K_ and I</title>  
+	  
+    <link rel="stylesheet" type="text/css" media="all" href="styles.css">	  
+	  
+  </head>
+  
+  <body>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/d3/3.5.6/d3.min.js"></script>  
+    <script src="./tree.js"></script> 
+	<script src="./array.js"></script> 
+    <script>
+	document.addEventListener("DOMContentLoaded", function(event) {
+	    drawArray("array1",['a','b','b','c','c','b','a'],["i","j"],[0,6]);
+	});
+	
+	document.addEventListener("DOMContentLoaded", function(event) {
+	    drawArray("array2",['x','x','b','c','c','x','x'],["i","j"],[2,4]);
+	});
+
+	document.addEventListener("DOMContentLoaded", function(event) {
+	    drawArray("array3",['x','x','x','c','c','x','x'],["i","j"],[3,4]);
+	});
+
+	document.addEventListener("DOMContentLoaded", function(event) {
+	    drawArray("array4",['x','x','b','c','x','x','x'],["i","j"],[2,3]);
+	});
+
+	document.addEventListener("DOMContentLoaded", function(event) {
+	    drawArray("array5",['9','5','4','3','1','2'],["n","i"],[6,4]);
+	});
+    </script>
+
+    <h1>K_ and I</h1>
+	<h2><a href="index.html">Home</a></h2>
+	 
+    <div class="container">
+    <p class="datestamp">July 26, 2016, 12:05 PM</p>
+
+	  <div class="bubble">
+	    <p><b>K_</b><br/>
+	    Hi!</p>
+	  </div>
+	
+	  <div class="bubble bubble-alt yellow">
+	    <p><b>I</b><br/>
+	    You should complete 2 coding questions. <br/>
+		You should finish both in 20 min each.<br/> 
+		I expect you to come up with almost executable code with test cases.</p>
+	  </div>
+
+
+	  <div class="bubble">
+		<p><b>K_</b><br/>
+	    Oh! ok sure.</p>
+		<div class="bubble"><p><b>In the mind</b><br/>What! This is insane.</div>
+	  </div>
+	
+	  <div class="bubble bubble-alt yellow">
+	    <p><b>I</b><br/>
+	    Given a string tell if it is a palindrome or not after deleting any one character in it.</p>
+	  </div>
+
+	  <div class="bubble">
+		<p><b>K_</b><br/>
+		<pre><code>
+		public boolean validPalindrome(String s) {
+			while (i < j) {
+				if (s.charAt(i) == s.charAt(j))	{i++; j--; continue;}
+				
+				// Not match case
+
+
+
+			}
+			return true;
+		}
+	   </code></pre>
+	    </pre>
+		<div class="bubble">When no matched what should do?<br/></div>
+		<svg id="array1" xmlns="http://www.w3.org/2000/svg"/>
+
+		<div class="bubble">Cannot proceed? <br/></div>
+		<div class="bubble">So, should I delete one of them.<br/></div>
+		<div class="bubble">Skipping i means deleting the element. But if I skip I and it turns out not palindrome how will I go back<br/></div>
+		<div class="bubble">Save the i and j and come back if fails.<br/></div>
+	  </div>
+	  
+	  <div class="bubble bubble-alt yellow">
+	    <p><b>I</b><br/>
+			I like the i,j two pointer approach. Can you proceeed in that direction.</p>
+	  </div>
+
+	  <div class="bubble">
+		<p><b>K_</b><br/>
+	    Will try skipping i. We just need to check for full palindrome.	<br/>
+		<pre><code>
+		public boolean validPalindrome(String s) {
+			int i = 0, j = s.length() - 1;
+			while (i < j) {
+				if (s.charAt(s) != s.charAt(e)) {
+					return isPalindrome(s, i + 1, j) || isPalindrome(s, i, j - 1);
+					// Skip i or 
+					// skip j 
+					// one of reminder inner sub strings it should be palindrome.
+				}
+				i++; j--;
+			}
+			return true;
+		}
+
+		private boolean isPalindrome(String s, int i, int j) {
+			while (i < j) {
+				if (s.charAt(i) != s.charAt(j))	return false;
+				i++; j--;
+			}
+			return true;
+		}
+	   </code></pre>
+	   <svg id="array2" xmlns="http://www.w3.org/2000/svg"/>
+	   <div class="bubble">First check palindrome for (3.4).<br/></div>
+	   <svg id="array3" xmlns="http://www.w3.org/2000/svg"/>
+	   <div class="bubble">On (3.4) will give true.<br/></div>
+	   <div class="bubble">Then check palindrome for (2,3).<br/></div>
+	   <div class="bubble">On (3.4) will give false.<br/></div>
+	   <svg id="array4" xmlns="http://www.w3.org/2000/svg"/>
+	   <div class="bubble">But we need not call the second one if first return true so use "||"<br/></div>
+	   <div class="bubble">We take O(n) time and O(1) space</div>
+	  </div>
+
+	  <div class="bubble bubble-alt yellow">
+	    <p><b>I</b><br/>
+	    Nice. Let's proceeed to the next question</p>
+	  </div>
+
+	  <div class="bubble bubble-alt yellow">
+	    <p><b>I</b><br/>
+	    You are gicen a number. You can rearrange any number of digits. Return the next bigger number you can make with the number.<br/>
+		Example: 954312 gives 954321</p>
+	  </div>
+
+	  <div class="bubble">
+		<p><b>K_</b><br/>
+	    Oh! ok sure.</p>
+		<div class="bubble"><p><b>In the mind</b><br/>Only 10 mins. This company is gone.</div>
+	  </div>
+
+
+	  <div class="bubble">
+		<p><b>K_</b><br/>
+	    Ok, 0's can be a problem</p>
+
+		<pre><code>
+		public int nextGreaterElement(int num) {
+			int[] digits = getDigits(num);
+			int n = digits.length;
+			int i = n - 2;
+			
+			// Find the first decreasing element from the end
+			while (i >= 0 && digits[i] >= digits[i + 1]) {
+				i--;
+			}
+			
+			// Need not proceed, but make the next number with i to n-1 range
+			if(i==0) return -1;
+			
+			return arrayToInt(nums);
+		}
+		</code></pre>
+
+		<svg id="array5" xmlns="http://www.w3.org/2000/svg"/>
+	
+		<div class="bubble"><p><b>In the mind</b><br/>Only 10 mins. This company is gone.</div>
+	  </div>
+
+
+	  <div class="bubble">
+		<p><b>K_</b><br/>
+	    Ok, 0's can be a problem</p>
+
+		<pre><code>
+		
+		public int nextGreaterElement(int num) {
+			int[] digits = getDigits(num);
+			int n = digits.length;
+			if(n < 2) return - 1;
+			int i = n - 2;
+			
+			// Find the first decreasing element from the end
+			while (i >= 0 && digits[i] >= digits[i + 1]) {
+				i--;
+			}
+
+			if(i===-1) return -1;
+
+			return next(digits, i, n-1);
+		}
+
+		public int next(digits, int i, int e) {
+				// Find the rightmost element that is greater than nums[i]
+				while (digits[e] <= digits[i]) {
+					e--;
+				}
+
+				// Swap elements at i and j
+				int t = digits[i];
+				digits[i] = digits[j];
+				digits[j] = t;
+			}
+			
+			// Reverse the elements from i+1 to the end of the array
+			reverse(nums, i + 1, e);
+		}
+		</code></pre>
+
+		<svg id="array5" xmlns="http://www.w3.org/2000/svg"/>
+	
+		<div class="bubble"><p><b>In the mind</b><br/>Only 10 mins. This company is gone.</div>
+	  </div>
+
+	  <div class="bubble bubble-alt yellow">
+	    <p><b>I</b><br/>
+	    Nice. What is the complexity</p>
+	  </div>
+
+	  <div class="bubble">
+		<p><b>K_</b><br/>
+	    O(n) both space and time.</p>
+	  </div>
+
+	  <div class="bubble bubble-alt yellow">
+	    <p><b>I</b><br/>
+	    We are about time bye.</p>
+	  </div>
+
+	  <div class="bubble">
+		<p><b>K_</b><br/>
+	    Actually, it would be great in really if I had got the "||" idea in question 1, I struggled to move pass the skip i point in solving the problem and wasted all my time.<p/>
+		<p>And in question 2 as there was no time to code and in stress I missed the reversing part. Instead, I told I will use a min heap and max heap and it will solve tje problem which wil not.</p>
+	  </div>
+
+	  <div class="bubble bubble-alt red">
+	    <p><b>M</b><br/>
+	    Sorry email</p>
+	  </div>
+	   
+	  <div class="bubble">
+		<p><b>You reached the end of this conversation for now.</b>
+		<br/>
+		<br/>
+		<p>These are "my personal" pages. Please contact me via *it*u* for any questions or suggestions. Thank you.</p>
+	  </div>
+  </div><!-- @end .container --> 
+</body>
+</html>
