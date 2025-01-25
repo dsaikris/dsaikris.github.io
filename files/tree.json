@@ -1,0 +1,77 @@
+[
+  {
+    "name": "K",
+    "children": [
+      {
+        "name": "Languages I Speek",
+        "children": [
+          {
+            "name": "English"
+          },
+          {
+            "name": "Telugu"
+          },
+          {
+            "name": "Hindi"
+          }
+        ]
+      },
+      {
+        "name": "Education",
+        "children": [
+          {
+            "name": "B.Tech, Computer Science"
+          },
+          {
+            "name": "M.S Resarch, Algorithms and graph theory"
+          }
+        ]
+      },
+      {
+        "name": "Programming languages",
+        "children": [
+          {
+            "name": "Java"
+          },
+          {
+            "name": "C"
+          },
+          {
+            "name": "Ruby"
+          }
+        ]
+      },
+      {
+        "name": "Places I worked",
+        "children": [
+          {
+            "name": "Chennai"
+          },
+          {
+            "name": "Hyderabad"
+          },
+          {
+            "name": "Seattle"
+          }
+        ]
+      },
+      {
+        "name": "Interests",
+        "children": [
+          {
+            "name": "Web srevices, See SOA, AWS, IFTTT.."
+          },
+          {
+            "name": "Algorithms, See Gene matching"
+          },
+          {
+            "name": "Robotics, See Molecubes"
+          },
+          {
+            "name": "Security, Do you know that I know! I can know?"
+          }
+        ]
+      }
+    ]
+  }
+]
