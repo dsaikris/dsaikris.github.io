@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests" />
+	<meta name="keywords" content="D3,codeSmells,design">
+	<meta name="author" content="Sai Krishna">
+
+	<meta http-equiv="Content-Type" content="text/html">
+	<title>Chats/K_, and S</title>
+
+	<link rel="stylesheet" type="text/css" media="all" href="../css/styles.css">
+
+</head>
+
+<body>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/d3/3.5.6/d3.min.js"></script>
+	<script src="../scripts/tree.js"></script>
+	<script src="../scripts/csv.js"></script>
+	<h1>K_, and S</h1>
+	<h2><a href="../index.html" style="color:#69c">Home</a></h2>
+
+	<div class="container">
+		<p class="datestamp">July 26, 2016, 12:05 PM</p>
+
+		<div class="bubble">
+			<p><b>K_</b> - <br />
+				The game is on <a href='https://d3js.org/'>D3.js!</a> See this one about tax rates.<br/><br/>
+
+				<div id="sampleTaxesCsv">
+					<script>generateTable("sampleTaxesCsv", "../files/SampleTaxes.csv");</script>
+				</div>
+			</p>
+		</div>
+
+		<div class="bubble bubble-alt yellow">
+			<p><b>S</b> - <br />
+				How about this?<br/><br/>
+			</p>
+		</div>
+
+		<div id="sampleTaxesTree">
+			<script>generateTreeDiagram("sampleTaxesTree", "../files/SampleTaxes.json");</script>
+		</div>
+
+		<div class="bubble">
+			<p><b>K_</b> - <br />
+				Nice! 3 wins less time, less space and simpler calculation.<br/>
+			</p>
+		</div>
+
+		<div class="bubble bubble-alt yellow">
+			<p><b>S</b> - <br />
+				Yeah! there are some duplicates left over.<br/>
+				And people love spreadsheets.<br/>
+			</p>
+		</div>
+
+		<div class="bubble">
+			<p><b>K_</b><br />
+				<b>You reached the end of this conversation.</b><br />
+				These are "my personal" pages. Please contact me for any questions or suggestions. Thank you.
+			</p>
+		</div>
+		
+	</div><!-- @end .container -->
+</body>
+
+</html>

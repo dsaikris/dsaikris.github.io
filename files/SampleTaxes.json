@@ -1,0 +1,48 @@
+[
+    {
+        "children": [
+            {
+                "name": "Electronics",
+                "children": [
+                    {
+                        "name": "Seattle",
+                        "children": [
+                            {
+                                "name": "9.5%"
+                            }
+                        ]
+                    },
+                    {
+                        "name": "Spokane",
+                        "children": [
+                            {
+                                "name": "8.7%"
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "name": "Perishables",
+                "children": [
+                    {
+                        "name": "Seattle",
+                        "children": [
+                            {
+                                "name": "9.5%"
+                            }
+                        ]
+                    },
+                    {
+                        "name": "Spokane",
+                        "children": [
+                            {
+                                "name": "8.7%"
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
+    }
+]

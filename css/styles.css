@@ -427,3 +427,19 @@ footer {
 .imageContainer>img:hover {
   transform: scale(2.5);
 }
+
+thead {
+	border-block-end: 2px solid;
+	background: whitesmoke;
+}
+
+tfoot {
+	border-block: 2px solid;
+	background: whitesmoke;
+}
+
+th,
+td {
+	border: 1px solid lightgrey;
+	padding: 0.25rem 0.75rem;
+}
