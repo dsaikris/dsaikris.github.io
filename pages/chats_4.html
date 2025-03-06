@@ -25,19 +25,32 @@
 	<div class="container">
 		<p class="datestamp">Feb 5, 2025, 12:50 AM</p>
 
+		<div class="bubble bubble-alt yellow">
+			<p><b>S</b> - <br />
+				Hi!<br/><br/>Let's see how taxes are calculated.<br/><br/>
+			</p>
+		</div>
+
 		<div class="bubble">
 			<p><b>K_</b> - <br />
-				The game is on <a href='https://d3js.org/'>D3.js!</a> See this one about tax rates.<br/><br/>
-
+				See these sample tax rates. They are not the correct and current rates this is just a model using a csv file for using it computation.
+				<br/>
+				<br />
 				<div id="sampleTaxesCsv">
 					<script>generateTable("sampleTaxesCsv", "../files/SampleTaxes.csv");</script>
 				</div>
+				<br/>
+				<br />
+				<input type="button" onclick="location.href='../files/SampleTaxes.csv';" value="Download csv" />
 			</p>
 		</div>
 
 		<div class="bubble bubble-alt yellow">
 			<p><b>S</b> - <br />
 				How about this?<br/><br/>
+				<br/>
+				<br />
+				<input type="button" onclick="location.href='../files/SampleTaxes.json';" value="Download tree" />
 			</p>
 		</div>
 
@@ -54,16 +67,50 @@
 
 		<div class="bubble bubble-alt yellow">
 			<p><b>S</b> - <br />
-				Yeah! there are still some duplicates.<br/>
-				And by the way MBAs actually use spreadsheets not trees.<br/>
+				Yeah! there are still some duplicates.
+				<br/>
+				<br/>
+				And by the way MBAs actually used to love spreadsheets not json or trees. Nowadays they seem to be comfortable with json.<br/>
 			</p>
 		</div>
-		
+
+
 		<div class="bubble">
-			<p><b>K_</b><br />
-				<b>You reached the end of this conversation.</b><br />
-				These are "my personal" pages. Please contact me for any questions or suggestions. Thank you.
-			</p>
+			<p><b>K_</b> - <br />
+				True! They are more comfortable with spreadsheets. But, json is more structured and can be used for more complex data models.
+				And the storage and network cost is very low like if I use protobufs it will be much smaller. If we rearrange the columns we can minimize these duplicates and it becomes much smaller and faster to transfer.
+				<br/>
+				<br/>
+				These sample rules become 248 bytes in protobuf encoded format compared to 2350 bytes in json.
+				It will be much more savings with real world data.
+				Also, it will be super fast if we build a gRPC service applying these rules as we need not parse any csv or json and then load it will directly load into say java objects using protobuf language support.
+				<br/>
+				<br/>
+				<input type="button" onclick="location.href='../files/SampleTaxes.csv';" value="Download Base 64 file" />
+				<br/>
+				<br/>
+				Try playing around with this protobuf file over <a href="https://www.protobufpal.com/" target="_blank">ProtobufPal.com</a> to see how it looks.
+				<br/>
+				<br/>
+				<pre><code>
+syntax = "proto3";
+
+message Node
+{
+	string name = 1;
+	repeated Node children = 2;
+}
+				</code></pre>
+		</div>
+
+		<div class="bubble">
+			<p><b>You reached the end of this conversation for now.</b>
+				<br />
+				<br />
+				<input type="button" onclick="location.href='../index.html';" value="Back to home" />
+				<br />
+				<br />
+			<p>These are "my personal" pages. Please contact me for any questions or suggestions. Thank you.</p>
 		</div>
 
 
