@@ -1,0 +1,67 @@
+[
+  {
+    "name": "Testing",
+    "children": [
+      {
+        "name": "Unit testing - Checks a module (or class or component) is working as expected or not"
+      },
+      {
+        "name": "Integration testing - Checks a group of modules (or classes or components) is working as expected or not"
+      },
+      {
+        "name": "System testing - Checks all functional requirements or not"
+      },
+      {
+        "name": "Acceptance testing - Checks all business requirements or not"
+      },
+      {
+        "name": "Smoke testing - Checks the most critical functionality is working or not"
+      },
+      {
+        "name": "Regression testing - Checks the new changes are breaking any existing functionality or not"
+      },
+      {
+        "name": "Performance testing - Checks the system under expected load is performing as expected or not"
+      },
+      {
+        "name": "Load testing - Checks the system under expected load is performing as expected or not"
+      },
+      {
+        "name": "Stress testing - Checks the system under unexpected load is performing as expected or not"
+      },
+      {
+        "name": "Breakpoint testing - Finds recoverable, unrecoverable and catastrophic points of load by ramping up the load"
+      },
+      {
+        "name": "Chaos testing - Checks the system is working as expected or not under unexpected conditions"
+      },
+      {
+        "name": "Usability testing - Checks the system is user friendly or not"
+      },
+      {
+        "name": "Security testing - Checks the system is secure or not"
+      },
+      {
+        "name": "Compatibility testing - Checks the system is compatible with other systems or not"
+      },
+      {
+        "name": "Alpha testing - Checks the system is working as expected or not by the developers"
+      },
+      {
+        "name": "Beta testing - Checks the system is working as expected or not by the end users"
+      },
+      {
+        "name": "A/B testing - Checks the system by splitting load or live traffic into two or more behaviours and comparing the results and user reactions"
+      },
+      {
+        "name": "Sanity testing - Automatically testing the critical system is working as expected or not after a change"
+      },
+      {
+        "name": "Shadow testing - Automatically testing if the new state i.e code, configuration or change is working as expected or not by comparing with responses in old state"
+      },
+      {
+        "name": "Accessibility testing - Checks the system can be used by all kinds of users or not"
+      }
+    ]
+  }
+]
