@@ -427,7 +427,8 @@ footer {
 }
 
 .imageContainer>img:hover {
-  transform: scale(2.5);
+  transform: scale(1.5);
+  overflow: scroll;
 }
 
 thead {
